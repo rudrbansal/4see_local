@@ -441,6 +441,14 @@ class HomeViewController: BaseViewController
         self.navigationController?.pushViewController(objc)
     }
     
+    @IBAction func btnActionProfile(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func btnActionNotifications(_ sender: UIButton) {
+        
+    }
+    
     func openSettings() {
 //        if (sender.isOn == true){
 //            print("on")
