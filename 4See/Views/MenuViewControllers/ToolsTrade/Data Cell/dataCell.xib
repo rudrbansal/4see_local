@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="64" id="KGk-i7-Jjw" customClass="dataCell" customModule="_See" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Xk-8d-P99">
+                        <rect key="frame" x="7" y="7" width="306" height="50"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XrZ-TV-vPN">
+                        <rect key="frame" x="7" y="5" width="307" height="53"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP Laptop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRb-SL-tbf">
+                                <rect key="frame" x="21" y="17.5" width="72.5" height="18"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EC1-gp-cHG">
+                                <rect key="frame" x="228.5" y="7" width="1.5" height="39"/>
+                                <color key="backgroundColor" name="theme"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1.5" id="iCF-wd-MuI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYj-L0-x4K">
+                                <rect key="frame" x="254" y="18" width="30" height="17"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                <color key="textColor" name="theme"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25v-Af-cSu">
+                                <rect key="frame" x="206" y="-5" width="106" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="IA6-JB-Ryp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                <state key="normal">
+                                    <color key="titleColor" name="theme"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewBtnAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zyb-xj-Uoh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xYj-L0-x4K" secondAttribute="trailing" constant="23" id="7m0-dc-HDK"/>
+                            <constraint firstItem="aRb-SL-tbf" firstAttribute="leading" secondItem="XrZ-TV-vPN" secondAttribute="leading" constant="21" id="JvU-ha-G4J"/>
+                            <constraint firstItem="EC1-gp-cHG" firstAttribute="top" secondItem="XrZ-TV-vPN" secondAttribute="top" constant="7" id="TdX-Zg-4tb"/>
+                            <constraint firstItem="xYj-L0-x4K" firstAttribute="centerY" secondItem="EC1-gp-cHG" secondAttribute="centerY" id="Xdt-Td-lW3"/>
+                            <constraint firstAttribute="bottom" secondItem="EC1-gp-cHG" secondAttribute="bottom" constant="7" id="n5S-qa-ODf"/>
+                            <constraint firstItem="25v-Af-cSu" firstAttribute="top" secondItem="XrZ-TV-vPN" secondAttribute="top" constant="-5" id="oMp-Jm-z3x"/>
+                            <constraint firstItem="xYj-L0-x4K" firstAttribute="leading" secondItem="EC1-gp-cHG" secondAttribute="trailing" constant="24" id="qqh-NZ-nLR"/>
+                            <constraint firstItem="aRb-SL-tbf" firstAttribute="centerY" secondItem="XrZ-TV-vPN" secondAttribute="centerY" id="xyA-GD-WuW"/>
+                            <constraint firstAttribute="bottom" secondItem="25v-Af-cSu" secondAttribute="bottom" constant="-5" id="yUm-LZ-COJ"/>
+                            <constraint firstAttribute="trailing" secondItem="25v-Af-cSu" secondAttribute="trailing" constant="-5" id="zZz-Fe-AI3"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="XrZ-TV-vPN" secondAttribute="bottom" constant="6" id="7zq-NY-UIe"/>
+                    <constraint firstAttribute="trailing" secondItem="XrZ-TV-vPN" secondAttribute="trailing" constant="6" id="85C-wA-HZO"/>
+                    <constraint firstItem="XrZ-TV-vPN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="7" id="9hh-Ci-d4w"/>
+                    <constraint firstItem="4Xk-8d-P99" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="9oH-gm-SW1"/>
+                    <constraint firstItem="4Xk-8d-P99" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="7" id="S1o-P9-b7x"/>
+                    <constraint firstItem="XrZ-TV-vPN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="S3g-NT-3ai"/>
+                    <constraint firstAttribute="bottom" secondItem="4Xk-8d-P99" secondAttribute="bottom" constant="7" id="ijO-GN-W8V"/>
+                    <constraint firstAttribute="trailing" secondItem="4Xk-8d-P99" secondAttribute="trailing" constant="7" id="sBl-DD-nJh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="nameLbl" destination="aRb-SL-tbf" id="GDd-dZ-IOp"/>
+                <outlet property="shadowView" destination="4Xk-8d-P99" id="tfc-L8-4tL"/>
+            </connections>
+            <point key="canvasLocation" x="15.942028985507248" y="79.6875"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="theme">
+            <color red="0.035294117647058823" green="0.027450980392156862" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

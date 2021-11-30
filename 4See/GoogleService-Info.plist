@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>915074140116-17quch331f461uahqkg7pvttef7n9ktg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.915074140116-17quch331f461uahqkg7pvttef7n9ktg</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>915074140116-recnobdkulijut9q0f68apad2j87ivv5.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD_GP9etJrxwmHYjBRAZUK8Smqo6TqC2hk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>915074140116</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.4See.app</string>
+	<key>PROJECT_ID</key>
+	<string>foursee-b7550</string>
+	<key>STORAGE_BUCKET</key>
+	<string>foursee-b7550.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:915074140116:ios:0982a5cb1267debd3f3841</string>
+</dict>
+</plist>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nID-Ak-RaN"/>
+                        <viewControllerLayoutGuide type="bottom" id="UK2-vy-Tal"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5m-ds-ofx">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashBack" translatesAutoresizingMaskIntoConstraints="NO" id="Iam-VQ-TIr">
+                                        <rect key="frame" x="0.0" y="-4.5" width="414" height="905"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Version" translatesAutoresizingMaskIntoConstraints="NO" id="Xs1-lA-kf1">
+                                        <rect key="frame" x="144" y="839" width="126" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="M7b-qi-YlC"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Iam-VQ-TIr" firstAttribute="height" secondItem="B5m-ds-ofx" secondAttribute="height" multiplier="1.01004" id="3a5-xP-3qT"/>
+                                    <constraint firstItem="Xs1-lA-kf1" firstAttribute="leading" secondItem="B5m-ds-ofx" secondAttribute="leading" constant="144" id="3ct-tg-qho"/>
+                                    <constraint firstItem="Iam-VQ-TIr" firstAttribute="width" secondItem="B5m-ds-ofx" secondAttribute="width" id="EPm-C3-K2r"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xs1-lA-kf1" secondAttribute="trailing" constant="144" id="M5T-hn-nK3"/>
+                                    <constraint firstItem="Iam-VQ-TIr" firstAttribute="centerY" secondItem="B5m-ds-ofx" secondAttribute="centerY" id="QHz-Ic-cJx"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xs1-lA-kf1" secondAttribute="bottom" constant="18" id="YDE-gf-52d"/>
+                                    <constraint firstItem="Iam-VQ-TIr" firstAttribute="centerX" secondItem="B5m-ds-ofx" secondAttribute="centerX" id="jq6-w0-g7E"/>
+                                    <constraint firstItem="Xs1-lA-kf1" firstAttribute="centerX" secondItem="B5m-ds-ofx" secondAttribute="centerX" id="pey-F0-AtO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="B5m-ds-ofx" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Bm0-Ua-Ncj"/>
+                            <constraint firstItem="B5m-ds-ofx" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="K8N-tD-rgc"/>
+                            <constraint firstItem="B5m-ds-ofx" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="TSS-Gl-3Io"/>
+                            <constraint firstItem="B5m-ds-ofx" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="Yva-SI-ueF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SplashBack" width="210.5" height="448.5"/>
+        <image name="Version" width="52.5" height="20"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
