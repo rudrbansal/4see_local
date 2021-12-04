@@ -139,7 +139,6 @@
 		17A67FB325EF982900FE67E3 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A67FB225EF982900FE67E3 /* loginViewController.swift */; };
 		17A67FB625EF9E1700FE67E3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 17A67FB525EF9E1700FE67E3 /* Podfile */; };
 		17A6800925EFA24100FE67E3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A6800725EFA24100FE67E3 /* HomeViewController.swift */; };
-		17A6800A25EFA24100FE67E3 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A6800825EFA24100FE67E3 /* HomeViewController.xib */; };
 		17A703AB261D6EE900AF43CF /* PolicyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A703AA261D6EE900AF43CF /* PolicyModel.swift */; };
 		17A703AE261D6F0800AF43CF /* PolicyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A703AD261D6F0800AF43CF /* PolicyRequest.swift */; };
 		17A703B1261D6F1F00AF43CF /* PolicyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A703B0261D6F1F00AF43CF /* PolicyResponse.swift */; };
@@ -322,7 +321,6 @@
 		17A67FB225EF982900FE67E3 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		17A67FB525EF9E1700FE67E3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		17A6800725EFA24100FE67E3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		17A6800825EFA24100FE67E3 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		17A703AA261D6EE900AF43CF /* PolicyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyModel.swift; sourceTree = "<group>"; };
 		17A703AD261D6F0800AF43CF /* PolicyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyRequest.swift; sourceTree = "<group>"; };
 		17A703B0261D6F1F00AF43CF /* PolicyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyResponse.swift; sourceTree = "<group>"; };
@@ -1001,7 +999,6 @@
 			children = (
 				17A6800725EFA24100FE67E3 /* HomeViewController.swift */,
 				3823E8222650198300A99A5C /* HomeViewModel.swift */,
-				17A6800825EFA24100FE67E3 /* HomeViewController.xib */,
 			);
 			path = HomeScreens;
 			sourceTree = "<group>";
@@ -1286,7 +1283,6 @@
 				17A67F1025EF819400FE67E3 /* Main.storyboard in Resources */,
 				5CA737A42754093900130EB5 /* ToDoListNib.xib in Resources */,
 				1766DD80261ECB42003291AC /* attendTimerCell.xib in Resources */,
-				17A6800A25EFA24100FE67E3 /* HomeViewController.xib in Resources */,
 				17115D09260891E300AC76BA /* changePasswordVC.xib in Resources */,
 				1766DD8D261ED03A003291AC /* viewAttendVC.xib in Resources */,
 			);

@@ -12,22 +12,22 @@ import WebKit
 import CoreLocation
 import GoogleMaps
 
-class HomeViewController: BaseViewController
-{
-    @IBOutlet weak var imgVW: UIImageView!
-    @IBOutlet weak var nameLbl: UILabel!
-    @IBOutlet weak var jobLbl: UILabel!
-    @IBOutlet weak var announcementsLbl: MarqueeLabel!
-    @IBOutlet weak var marqueWebVW: WKWebView!
-    @IBOutlet weak var clockedInbtn: UIButton!
-    @IBOutlet weak var logoImg: UIImageView!
-    @IBOutlet weak var switchLbl: UILabel!
-    @IBOutlet weak var clockedIn2: UIButton!
-    @IBOutlet weak var workBtn: UIButton!
-    @IBOutlet weak var homeBtn: UIButton!
-    @IBOutlet weak var sickBtn: UIButton!
-    
-    @IBOutlet weak var gpsSwitch: UISwitch!
+class HomeViewController: BaseViewController {
+//    @IBOutlet weak var imgVW: UIImageView!
+//    @IBOutlet weak var nameLbl: UILabel!
+//    @IBOutlet weak var jobLbl: UILabel!
+//    @IBOutlet weak var announcementsLbl: MarqueeLabel!
+//    @IBOutlet weak var marqueWebVW: WKWebView!
+//    @IBOutlet weak var clockedInbtn: UIButton!
+////    @IBOutlet weak var logoImg: UIImageView!
+//    @IBOutlet weak var switchLbl: UILabel!
+//    @IBOutlet weak var clockedIn2: UIButton!
+//    @IBOutlet weak var workBtn: UIButton!
+//    @IBOutlet weak var homeBtn: UIButton!
+//    @IBOutlet weak var sickBtn: UIButton!
+//
+//    @IBOutlet weak var gpsSwitch: UISwitch!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     let viewModel = announcementViewModel()
     let vModel = attendanceViewModel()
@@ -40,28 +40,27 @@ class HomeViewController: BaseViewController
     var company_lng : Double = 0.0
     var homeViewModel = HomeViewModel()
     
-    override class var storyboardIdentifier: String
-    {
-        return "HomeViewController"
-    }
+//    override class var storyboardIdentifier: String
+//    {
+//        return "HomeViewController"
+//    }
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
-        gpsSwitch.setOn(false, animated: true)
-        self.switchLbl.text = "GPS location is switched off"
+//        gpsSwitch.setOn(false, animated: true)
+//        self.switchLbl.text = "GPS location is switched off"
         
         getAnnouncementsData()
         initSideMenuView()
         dataSetup()
-        marqueWebVW.isOpaque = false
-        marqueWebVW.layer.cornerRadius = 12
-        marqueWebVW.clipsToBounds = true
-        clockedInbtn.isHidden = true
-        clockedIn2.isHidden = true
-        
-        marqueWebVW.backgroundColor = BaseColors.themeColor
-        marqueWebVW.tintColor = BaseColors.themeColor
+//        marqueWebVW.isOpaque = false
+//        marqueWebVW.layer.cornerRadius = 12
+//        marqueWebVW.clipsToBounds = true
+//        clockedInbtn.isHidden = true
+//        clockedIn2.isHidden = true
+//
+//        marqueWebVW.backgroundColor = BaseColors.themeColor
+//        marqueWebVW.tintColor = BaseColors.themeColor
         self.showProgressBar()
         NotificationCenter.default.addObserver(self, selector : #selector(handleNotification(n:)), name : Notification.Name("notificationData"), object : nil)
         
@@ -70,18 +69,18 @@ class HomeViewController: BaseViewController
         if CLLocationManager.locationServicesEnabled() {
             switch locationManager.authorizationStatus {
             case .notDetermined, .restricted, .denied:
-                gpsSwitch.setOn(false, animated: true)
-                self.switchLbl.text = "GPS location is switched off"
+//                gpsSwitch.setOn(false, animated: true)
+//                self.switchLbl.text = "GPS location is switched off"
                 self.updateUserProfile()
             case .authorizedAlways, .authorizedWhenInUse:
                 if let geoLocaton = UserDefaults.standard.value(forKey: "geoLocaton") as? String, geoLocaton == "off" {
-                    gpsSwitch.setOn(false, animated: true)
-                    self.switchLbl.text = "GPS location is switched off"
+//                    gpsSwitch.setOn(false, animated: true)
+//                    self.switchLbl.text = "GPS location is switched off"
                     self.updateUserProfile()
                 } else {
                     if UserDefaults.standard.value(forKey: "geoLocaton") as? String != nil {
-                        gpsSwitch.setOn(true, animated: true)
-                        self.switchLbl.text = "GPS location is switched on"
+//                        gpsSwitch.setOn(true, animated: true)
+//                        self.switchLbl.text = "GPS location is switched on"
                         locationManager.delegate = self
                         locationManager.requestAlwaysAuthorization()
                         locationManager.startUpdatingLocation()
@@ -108,58 +107,58 @@ class HomeViewController: BaseViewController
     }
     
     @IBAction func actionGpsLocation(_ sender: UISwitch) {
-        if !sender.isOn {
-            gpsSwitch.setOn(true, animated: true)
-            self.switchLbl.text = "GPS location is switched on"
-            self.openSettings()
-        } else {
-            checkLocationPermissions()
-        }
+//        if !sender.isOn {
+//            gpsSwitch.setOn(true, animated: true)
+//            self.switchLbl.text = "GPS location is switched on"
+//            self.openSettings()
+//        } else {
+//            checkLocationPermissions()
+//        }
     }
     
     @objc func updateGPSButton() {
         if CLLocationManager.locationServicesEnabled() {
-            switch locationManager.authorizationStatus {
-            case .notDetermined, .restricted, .denied:
-                gpsSwitch.setOn(false, animated: true)
-                self.switchLbl.text = "GPS location is switched off"
-            case .authorizedAlways, .authorizedWhenInUse:
-                gpsSwitch.setOn(true, animated: true)
-                self.switchLbl.text = "GPS location is switched on"
-                locationManager.delegate = self
-                locationManager.requestAlwaysAuthorization()
-                locationManager.startUpdatingLocation()
-                locationManager.activityType = .automotiveNavigation
-                locationManager.distanceFilter = kCLLocationAccuracyHundredMeters
-                locationManager.desiredAccuracy = kCLLocationAccuracyBest
-                locationManager.startMonitoringSignificantLocationChanges()
-            @unknown default:
-                break
-            }
+//            switch locationManager.authorizationStatus {
+////            case .notDetermined, .restricted, .denied:
+////                gpsSwitch.setOn(false, animated: true)
+////                self.switchLbl.text = "GPS location is switched off"
+//            case .authorizedAlways, .authorizedWhenInUse:
+////                gpsSwitch.setOn(true, animated: true)
+////                self.switchLbl.text = "GPS location is switched on"
+//                locationManager.delegate = self
+//                locationManager.requestAlwaysAuthorization()
+//                locationManager.startUpdatingLocation()
+//                locationManager.activityType = .automotiveNavigation
+//                locationManager.distanceFilter = kCLLocationAccuracyHundredMeters
+//                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//                locationManager.startMonitoringSignificantLocationChanges()
+//            @unknown default:
+//                break
+//            }
         }
         updateUserProfile()
     }
     
     func checkLocationPermissions() {
         if CLLocationManager.locationServicesEnabled() {
-            switch locationManager.authorizationStatus {
-            case .notDetermined, .restricted, .denied:
-                gpsSwitch.setOn(false, animated: true)
-                self.switchLbl.text = "GPS location is switched off"
-                self.openSettings()
-            case .authorizedAlways, .authorizedWhenInUse:
-                gpsSwitch.setOn(true, animated: true)
-                self.switchLbl.text = "GPS location is switched on"
-                locationManager.delegate = self
-                locationManager.requestAlwaysAuthorization()
-                locationManager.startUpdatingLocation()
-                locationManager.activityType = .automotiveNavigation
-                locationManager.distanceFilter = kCLLocationAccuracyHundredMeters
-                locationManager.desiredAccuracy = kCLLocationAccuracyBest
-                locationManager.startMonitoringSignificantLocationChanges()
-            @unknown default:
-                break
-            }
+//            switch locationManager.authorizationStatus {
+//            case .notDetermined, .restricted, .denied:
+//                gpsSwitch.setOn(false, animated: true)
+//                self.switchLbl.text = "GPS location is switched off"
+//                self.openSettings()
+//            case .authorizedAlways, .authorizedWhenInUse:
+//                gpsSwitch.setOn(true, animated: true)
+//                self.switchLbl.text = "GPS location is switched on"
+//                locationManager.delegate = self
+//                locationManager.requestAlwaysAuthorization()
+//                locationManager.startUpdatingLocation()
+//                locationManager.activityType = .automotiveNavigation
+//                locationManager.distanceFilter = kCLLocationAccuracyHundredMeters
+//                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//                locationManager.startMonitoringSignificantLocationChanges()
+//            @unknown default:
+//                break
+//            }
         }
         updateUserProfile()
     }
@@ -167,18 +166,17 @@ class HomeViewController: BaseViewController
     
     func initSideMenuView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
         SideMenuManager.default.leftMenuNavigationController = storyboard.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? SideMenuNavigationController
     }
     
     func dataSetup() {
         Global.getDataFromUserDefaults(.userData)
-        nameLbl.text = "Welcome \(AppConfig.loggedInUser!.userInfo!.name!.firstCapitalized)"
-        jobLbl.text = UserDefaults.standard.value(forKey: "jobTitle") as! String + " - " + AppConfig.loggedInUser!.userInfo!.department!
-        let img = UserDefaults.standard.value(forKey: "image") as! String
-        print(UrlConfig.IMAGE_URL+(img as! String))
-        imgVW.setImageOnView(UrlConfig.IMAGE_URL+img.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
-        logoImg.setImageOnView(UrlConfig.IMAGE_URL+AppConfig.loggedInUser!.userInfo!.companyId!.image!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+//        nameLbl.text = "Welcome \(AppConfig.loggedInUser!.userInfo!.name!.firstCapitalized)"
+//        jobLbl.text = UserDefaults.standard.value(forKey: "jobTitle") as! String + " - " + AppConfig.loggedInUser!.userInfo!.department!
+//        let img = UserDefaults.standard.value(forKey: "image") as! String
+//        print(UrlConfig.IMAGE_URL+(img as! String))
+//        imgVW.setImageOnView(UrlConfig.IMAGE_URL+img.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+//        logoImg.setImageOnView(UrlConfig.IMAGE_URL+AppConfig.loggedInUser!.userInfo!.companyId!.image!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
     }
     
     //MARK:- IBActions()
@@ -186,266 +184,277 @@ class HomeViewController: BaseViewController
         present(SideMenuManager.default.leftMenuNavigationController!, animated: true, completion: nil)
     }
     
-    @IBAction func eventsAction(_ sender: Any) {
-        let objc = announcementsViewController()
-        self.navigationController?.pushViewController(objc)
-    }
+//    @IBAction func eventsAction(_ sender: Any) {
+//        let objc = announcementsViewController()
+//        self.navigationController?.pushViewController(objc)
+//    }
+//
+//    @IBAction func editProfileBtnAction(_ sender: Any) {
+//        let objc = editProfileViewController()
+//        self.navigationController?.pushViewController(objc)
+//    }
+//
+//    @IBAction func toolsBtnAction(_ sender: Any) {
+//        let objc = toolsTradeViewController()
+//        self.navigationController?.pushViewController(objc)
+//    }
     
-    @IBAction func editProfileBtnAction(_ sender: Any) {
-        let objc = editProfileViewController()
-        self.navigationController?.pushViewController(objc)
-    }
-    
-    @IBAction func toolsBtnAction(_ sender: Any) {
-        let objc = toolsTradeViewController()
-        self.navigationController?.pushViewController(objc)
-    }
-    
-    @IBAction func runningLateAction(_ sender: Any) {
-        if self.vModel.attendList.count != 0
-        {
-            if  self.vModel.attendList[self.vModel.attendList.count - 1].chekcIntype == "CheckOut" ||  self.vModel.attendList[self.vModel.attendList.count - 1].chekcIntype == "HomeCheckOut"{
-                self.showToast("You are unable to access this feature as you checkout for the day.")
-            }
-            else if  self.vModel.attendList[0].chekcIntype == "CheckIn" || self.vModel.attendList[0].chekcIntype == "HomeCheckIn"
-            {
-                self.showToast("You are unable to access this feature during clocked in.")
-            }
-//            else if  self.vModel.attendList[0].chekcIntype == "HomeCheckIn"
+//    @IBAction func runningLateAction(_ sender: Any) {
+//        if self.vModel.attendList.count != 0
+//        {
+//            if  self.vModel.attendList[self.vModel.attendList.count - 1].chekcIntype == "CheckOut" ||  self.vModel.attendList[self.vModel.attendList.count - 1].chekcIntype == "HomeCheckOut"{
+//                self.showToast("You are unable to access this feature as you checkout for the day.")
+//            }
+//            else if  self.vModel.attendList[0].chekcIntype == "CheckIn" || self.vModel.attendList[0].chekcIntype == "HomeCheckIn"
 //            {
 //                self.showToast("You are unable to access this feature during clocked in.")
 //            }
-            else
-            {
-                let vc = runningLateVC()
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-        }
-        else
-        {
-            let vc = runningLateVC()
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        
-    }
-    @IBAction func attendanceAction(_ sender: Any)
-    {
-        if self.vModel.attendList.count == 0
-        {
-            if !gpsSwitch.isOn {
-                showToast("Please turn on the GPS switch first before moving further.")
-            } else {
-                let objc = biometricsVC()
-                objc.type = "Attendance"
-                GlobalVariable.dismiss = "other"
-                self.navigationController?.pushViewController(objc)
-            }
-        }
-        else
-        {
-            if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "CheckIn"
-            {
-                self.clockedInbtn.isHidden = false
-                self.clockedIn2.isHidden = true
-                let objc = TimeTrackingVC()
-                objc.type = "Attendance"
-                self.navigationController?.pushViewController(objc)
-                
-            }
-            else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "BreakIn"
-            {
-                self.clockedInbtn.isHidden = false
-                self.clockedIn2.isHidden = true
-                let objc = TimeTrackingVC()
-                objc.type = "Attendance"
-                self.navigationController?.pushViewController(objc)
-            }
-            else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeCheckIn"
-            {
-                self.clockedInbtn.isHidden = true
-                self.clockedIn2.isHidden = false
-                
-                self.showToast("You are unable to clocked in more than once in a day")
-            }
-            else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeBreakIn"
-            {
-                self.clockedInbtn.isHidden = true
-                self.clockedIn2.isHidden = false
-                self.showToast("You are unable to clocked in more than once in a day")
-                
-            }
-            else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "CheckOut"
-            {
-                self.clockedInbtn.isHidden = true
-                self.clockedIn2.isHidden = true
-                self.homeBtn.isUserInteractionEnabled = true
-                self.workBtn.isUserInteractionEnabled = true
-                
-                self.showToast("You are unable to clocked in more than once in a day")
-                
-            }
-            else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "BreakOut"
-            {
-                self.clockedInbtn.isHidden = false
-                self.clockedIn2.isHidden = true
-                self.homeBtn.isUserInteractionEnabled = true
-                self.workBtn.isUserInteractionEnabled = true
-                let objc = TimeTrackingVC()
-                objc.type = "Attendance"
-                self.navigationController?.pushViewController(objc)
-                
-            }
-            else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeCheckOut"
-            {
-                self.clockedInbtn.isHidden = true
-                self.clockedIn2.isHidden = true
-                self.homeBtn.isUserInteractionEnabled = true
-                self.workBtn.isUserInteractionEnabled = true
-                self.showToast("You are unable to clocked in more than once in a day")
-                
-            }
-            else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeBreakOut"
-            {
-                self.clockedInbtn.isHidden = true
-                self.clockedIn2.isHidden = true
-                self.homeBtn.isUserInteractionEnabled = true
-                self.workBtn.isUserInteractionEnabled = true
-                self.showToast("You are unable to clocked in more than once in a day")
-                
-            }
-            
-        }
-        
-        
-    }
+////            else if  self.vModel.attendList[0].chekcIntype == "HomeCheckIn"
+////            {
+////                self.showToast("You are unable to access this feature during clocked in.")
+////            }
+//            else
+//            {
+//                let vc = runningLateVC()
+//                self.navigationController?.pushViewController(vc, animated: true)
+//            }
+//        }
+//        else
+//        {
+//            let vc = runningLateVC()
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        }
+//
+//    }
+//    @IBAction func attendanceAction(_ sender: Any)
+//    {
+//        if self.vModel.attendList.count == 0
+//        {
+////            if !gpsSwitch.isOn {
+////                showToast("Please turn on the GPS switch first before moving further.")
+////            } else {
+//                let objc = biometricsVC()
+//                objc.type = "Attendance"
+//                GlobalVariable.dismiss = "other"
+//                self.navigationController?.pushViewController(objc)
+//            }
+////        }
+////        else
+////        {
+////            if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "CheckIn"
+////            {
+//////                self.clockedInbtn.isHidden = false
+//////                self.clockedIn2.isHidden = true
+////                let objc = TimeTrackingVC()
+////                objc.type = "Attendance"
+////                self.navigationController?.pushViewController(objc)
+////
+////            }
+////            else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "BreakIn"
+////            {
+////                self.clockedInbtn.isHidden = false
+////                self.clockedIn2.isHidden = true
+////                let objc = TimeTrackingVC()
+////                objc.type = "Attendance"
+////                self.navigationController?.pushViewController(objc)
+////            }
+////            else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeCheckIn"
+////            {
+////                self.clockedInbtn.isHidden = true
+////                self.clockedIn2.isHidden = false
+////
+////                self.showToast("You are unable to clocked in more than once in a day")
+////            }
+////            else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeBreakIn"
+////            {
+////                self.clockedInbtn.isHidden = true
+////                self.clockedIn2.isHidden = false
+////                self.showToast("You are unable to clocked in more than once in a day")
+////
+////            }
+////            else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "CheckOut"
+////            {
+////                self.clockedInbtn.isHidden = true
+////                self.clockedIn2.isHidden = true
+////                self.homeBtn.isUserInteractionEnabled = true
+////                self.workBtn.isUserInteractionEnabled = true
+////
+////                self.showToast("You are unable to clocked in more than once in a day")
+////
+////            }
+////            else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "BreakOut"
+////            {
+////                self.clockedInbtn.isHidden = false
+////                self.clockedIn2.isHidden = true
+////                self.homeBtn.isUserInteractionEnabled = true
+////                self.workBtn.isUserInteractionEnabled = true
+////                let objc = TimeTrackingVC()
+////                objc.type = "Attendance"
+////                self.navigationController?.pushViewController(objc)
+////
+////            }
+////            else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeCheckOut"
+////            {
+////                self.clockedInbtn.isHidden = true
+////                self.clockedIn2.isHidden = true
+////                self.homeBtn.isUserInteractionEnabled = true
+////                self.workBtn.isUserInteractionEnabled = true
+////                self.showToast("You are unable to clocked in more than once in a day")
+////
+////            }
+////            else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeBreakOut"
+////            {
+////                self.clockedInbtn.isHidden = true
+////                self.clockedIn2.isHidden = true
+////                self.homeBtn.isUserInteractionEnabled = true
+////                self.workBtn.isUserInteractionEnabled = true
+////                self.showToast("You are unable to clocked in more than once in a day")
+////
+////            }
+////
+////        }
+//
+//
+//    }
     
-    @IBAction func wfhAction(_ sender: Any)
-    {
-        if self.vModel.attendList.count == 0
-        {
-            let objc = biometricsVC()
-            objc.type = "Work From Home"
-            GlobalVariable.dismiss = "other"
-            self.navigationController?.pushViewController(objc)
-        }
-        else
-        {
-            if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "CheckIn"
-            {
-                self.clockedInbtn.isHidden = false
-                self.clockedIn2.isHidden = true
-                self.showToast("You are unable to clocked in more than once in a day")
-                
-                
-            }
-            else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "BreakIn"
-            {
-                self.clockedInbtn.isHidden = false
-                self.clockedIn2.isHidden = true
-                self.showToast("You are unable to clocked in more than once in a day")
-                
-            }
-            else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeCheckIn"
-            {
-                self.clockedInbtn.isHidden = true
-                self.clockedIn2.isHidden = false
-                let objc = TimeTrackingVC()
-                objc.type = "Work From Home"
-                self.navigationController?.pushViewController(objc)
-                
-            }
-            else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeBreakIn"
-            {
-                self.clockedInbtn.isHidden = true
-                self.clockedIn2.isHidden = false
-                let objc = TimeTrackingVC()
-                objc.type = "Work From Home"
-                self.navigationController?.pushViewController(objc)
-            }
-            else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "CheckOut"
-            {
-                self.clockedInbtn.isHidden = true
-                self.clockedIn2.isHidden = true
-                self.homeBtn.isUserInteractionEnabled = true
-                self.workBtn.isUserInteractionEnabled = true
-                
-                self.showToast("You are unable to clocked in more than once in a day")
-                
-            }
-            else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "BreakOut"
-            {
-                self.clockedInbtn.isHidden = true
-                self.clockedIn2.isHidden = true
-                self.homeBtn.isUserInteractionEnabled = true
-                self.workBtn.isUserInteractionEnabled = true
-                self.showToast("You are unable to clocked in more than once in a day")
-                
-            }
-            else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeCheckOut"
-            {
-                self.clockedInbtn.isHidden = true
-                self.clockedIn2.isHidden = true
-                self.homeBtn.isUserInteractionEnabled = true
-                self.workBtn.isUserInteractionEnabled = true
-                self.showToast("You are unable to clocked in more than once in a day")
-                
-            }
-            else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeBreakOut"
-            {
-                self.clockedInbtn.isHidden = true
-                self.clockedIn2.isHidden = false
-                self.homeBtn.isUserInteractionEnabled = true
-                self.workBtn.isUserInteractionEnabled = true
-                let objc = TimeTrackingVC()
-                objc.type = "Work From Home"
-                self.navigationController?.pushViewController(objc)
-            }
-            
-        }
-        
-    }
-    @IBAction func sickAction(_ sender: Any)
-    {
-        if self.vModel.attendList.count != 0
-        {
-            if  self.vModel.attendList[self.vModel.attendList.count - 1].chekcIntype == "HomeCheckOut"
-            {
-                let objc = sickViewController()
-                self.navigationController?.pushViewController(objc)
-                
-            }
-            else if  self.vModel.attendList[self.vModel.attendList.count - 1].chekcIntype == "CheckOut"
-            {
-                let objc = sickViewController()
-                self.navigationController?.pushViewController(objc)
-                
-            }
-            else
-            {
-                self.showToast("You are unable to access this feature during clocked in.")
-                
-            }
-        }
-        else
-        {
-            let objc = sickViewController()
-            self.navigationController?.pushViewController(objc)
-        }
-        
-        
-    }
+//    @IBAction func wfhAction(_ sender: Any) {
+//        if self.vModel.attendList.count == 0
+//        {
+//            let objc = biometricsVC()
+//            objc.type = "Work From Home"
+//            GlobalVariable.dismiss = "other"
+//            self.navigationController?.pushViewController(objc)
+//        }
+//        else {}
+////        {
+////            if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "CheckIn"
+////            {
+////                self.clockedInbtn.isHidden = false
+////                self.clockedIn2.isHidden = true
+////                self.showToast("You are unable to clocked in more than once in a day")
+////
+////
+////            }
+////            else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "BreakIn"
+////            {
+////                self.clockedInbtn.isHidden = false
+////                self.clockedIn2.isHidden = true
+////                self.showToast("You are unable to clocked in more than once in a day")
+////
+////            }
+////            else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeCheckIn"
+////            {
+////                self.clockedInbtn.isHidden = true
+////                self.clockedIn2.isHidden = false
+////                let objc = TimeTrackingVC()
+////                objc.type = "Work From Home"
+////                self.navigationController?.pushViewController(objc)
+////
+////            }
+////            else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeBreakIn"
+////            {
+////                self.clockedInbtn.isHidden = true
+////                self.clockedIn2.isHidden = false
+////                let objc = TimeTrackingVC()
+////                objc.type = "Work From Home"
+////                self.navigationController?.pushViewController(objc)
+////            }
+////            else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "CheckOut"
+////            {
+////                self.clockedInbtn.isHidden = true
+////                self.clockedIn2.isHidden = true
+////                self.homeBtn.isUserInteractionEnabled = true
+////                self.workBtn.isUserInteractionEnabled = true
+////
+////                self.showToast("You are unable to clocked in more than once in a day")
+////
+////            }
+////            else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "BreakOut"
+////            {
+////                self.clockedInbtn.isHidden = true
+////                self.clockedIn2.isHidden = true
+////                self.homeBtn.isUserInteractionEnabled = true
+////                self.workBtn.isUserInteractionEnabled = true
+////                self.showToast("You are unable to clocked in more than once in a day")
+////
+////            }
+////            else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeCheckOut"
+////            {
+////                self.clockedInbtn.isHidden = true
+////                self.clockedIn2.isHidden = true
+////                self.homeBtn.isUserInteractionEnabled = true
+////                self.workBtn.isUserInteractionEnabled = true
+////                self.showToast("You are unable to clocked in more than once in a day")
+////
+////            }
+////            else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeBreakOut"
+////            {
+////                self.clockedInbtn.isHidden = true
+////                self.clockedIn2.isHidden = false
+////                self.homeBtn.isUserInteractionEnabled = true
+////                self.workBtn.isUserInteractionEnabled = true
+////                let objc = TimeTrackingVC()
+////                objc.type = "Work From Home"
+////                self.navigationController?.pushViewController(objc)
+////            }
+////
+////        }
+//
+//    }
+//    @IBAction func sickAction(_ sender: Any)
+//    {
+//        if self.vModel.attendList.count != 0
+//        {
+//            if  self.vModel.attendList[self.vModel.attendList.count - 1].chekcIntype == "HomeCheckOut"
+//            {
+//                let objc = sickViewController()
+//                self.navigationController?.pushViewController(objc)
+//
+//            }
+//            else if  self.vModel.attendList[self.vModel.attendList.count - 1].chekcIntype == "CheckOut"
+//            {
+//                let objc = sickViewController()
+//                self.navigationController?.pushViewController(objc)
+//
+//            }
+//            else
+//            {
+//                self.showToast("You are unable to access this feature during clocked in.")
+//
+//            }
+//        }
+//        else
+//        {
+//            let objc = sickViewController()
+//            self.navigationController?.pushViewController(objc)
+//        }
+//
+//
+//    }
     
-    @IBAction func clockAction(_ sender: Any)
-    {
-        let objc = TimeTrackingVC()
-        self.navigationController?.pushViewController(objc)
-    }
+//    @IBAction func clockAction(_ sender: Any)
+//    {
+//        let objc = TimeTrackingVC()
+//        self.navigationController?.pushViewController(objc)
+//    }
     
     @IBAction func btnActionProfile(_ sender: UIButton) {
         
     }
     
     @IBAction func btnActionNotifications(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func btnActionBrainstorm(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func btnActionSurveys(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func btnActionSocialSpace(_ sender: UIButton) {
         
     }
     
@@ -502,11 +511,11 @@ extension HomeViewController {
                 {
                     let arr  = self.viewModel.announcementsList!.data[0].createdAt?.components(separatedBy: "T")
                     print(arr)
-                    self.marqueWebVW.loadHTMLString("<html><body><marquee style='font-family:Roboto;color:white;padding:30px 30px 20px 30px;font-size:44px;'>\(arr![0]) \(String(describing: self.viewModel.announcementsList!.data[0].title!))</marquee></body></html>", baseURL: nil)
+//                    self.marqueWebVW.loadHTMLString("<html><body><marquee style='font-family:Roboto;color:white;padding:30px 30px 20px 30px;font-size:44px;'>\(arr![0]) \(String(describing: self.viewModel.announcementsList!.data[0].title!))</marquee></body></html>", baseURL: nil)
                 }
                 else
                 {
-                    self.marqueWebVW.loadHTMLString("<html><body><marquee style='font-family:\(font!.familyName);color:white;padding:30px 30px 20px 30px;font-size:44px;'> No annoucement found.</marquee></body></html>", baseURL: nil)
+//                    self.marqueWebVW.loadHTMLString("<html><body><marquee style='font-family:\(font!.familyName);color:white;padding:30px 30px 20px 30px;font-size:44px;'> No annoucement found.</marquee></body></html>", baseURL: nil)
                 }
             }
             else
@@ -529,62 +538,62 @@ extension HomeViewController {
             if status == true
             {
                 self.hideProgressBar()
-                if self.vModel.attendList.count != 0
-                {
-                    if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "CheckIn"
-                    {
-                        self.clockedInbtn.isHidden = false
-                        self.clockedIn2.isHidden = true
-                        self.clockedInbtn.setTitle("Clocked In", for: .normal)
-
-                    }
-                    else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "BreakIn"
-                    {
-                        self.clockedInbtn.isHidden = false
-                        self.clockedIn2.isHidden = true
-                       
-                    }else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeCheckIn"{
-                        self.clockedInbtn.isHidden = true
-                        self.clockedIn2.isHidden = false
-                        }
-                    else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeBreakIn"{
-                        self.clockedInbtn.isHidden = true
-                        self.clockedIn2.isHidden = false
-                        }
-                    else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "CheckOut"
-                    {
-                        self.clockedInbtn.isHidden = true
-                        self.clockedIn2.isHidden = true
-                        self.homeBtn.isUserInteractionEnabled = true
-                        self.workBtn.isUserInteractionEnabled = true
-                        self.sickBtn.isUserInteractionEnabled = true
-
-                    }
-                    else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "BreakOut"
-                    {
-                        self.clockedInbtn.isHidden = false
-                        self.clockedIn2.isHidden = true
-                        self.homeBtn.isUserInteractionEnabled = true
-                        self.workBtn.isUserInteractionEnabled = true
-
-                    }
-                    else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeCheckOut"
-                    {
-                        self.clockedInbtn.isHidden = true
-                        self.clockedIn2.isHidden = true
-                        self.homeBtn.isUserInteractionEnabled = true
-                        self.workBtn.isUserInteractionEnabled = true
-
-                    }
-                    else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeBreakOut"
-                    {
-                        self.clockedInbtn.isHidden = true
-                        self.clockedIn2.isHidden = false
-                        self.homeBtn.isUserInteractionEnabled = true
-                        self.workBtn.isUserInteractionEnabled = true
-
-                    }
-                }
+//                if self.vModel.attendList.count != 0
+//                {
+//                    if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "CheckIn"
+//                    {
+//                        self.clockedInbtn.isHidden = false
+//                        self.clockedIn2.isHidden = true
+//                        self.clockedInbtn.setTitle("Clocked In", for: .normal)
+//
+//                    }
+//                    else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "BreakIn"
+//                    {
+//                        self.clockedInbtn.isHidden = false
+//                        self.clockedIn2.isHidden = true
+//
+//                    }else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeCheckIn"{
+//                        self.clockedInbtn.isHidden = true
+//                        self.clockedIn2.isHidden = false
+//                        }
+//                    else if  self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeBreakIn"{
+//                        self.clockedInbtn.isHidden = true
+//                        self.clockedIn2.isHidden = false
+//                        }
+//                    else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "CheckOut"
+//                    {
+//                        self.clockedInbtn.isHidden = true
+//                        self.clockedIn2.isHidden = true
+//                        self.homeBtn.isUserInteractionEnabled = true
+//                        self.workBtn.isUserInteractionEnabled = true
+//                        self.sickBtn.isUserInteractionEnabled = true
+//
+//                    }
+//                    else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "BreakOut"
+//                    {
+//                        self.clockedInbtn.isHidden = false
+//                        self.clockedIn2.isHidden = true
+//                        self.homeBtn.isUserInteractionEnabled = true
+//                        self.workBtn.isUserInteractionEnabled = true
+//
+//                    }
+//                    else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeCheckOut"
+//                    {
+//                        self.clockedInbtn.isHidden = true
+//                        self.clockedIn2.isHidden = true
+//                        self.homeBtn.isUserInteractionEnabled = true
+//                        self.workBtn.isUserInteractionEnabled = true
+//
+//                    }
+//                    else if self.vModel.attendList[self.vModel.attendList.count-1].chekcIntype == "HomeBreakOut"
+//                    {
+//                        self.clockedInbtn.isHidden = true
+//                        self.clockedIn2.isHidden = false
+//                        self.homeBtn.isUserInteractionEnabled = true
+//                        self.workBtn.isUserInteractionEnabled = true
+//
+//                    }
+//                }
             }
             else
             {
@@ -655,14 +664,14 @@ extension HomeViewController : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         if region is CLCircularRegion {
             self.showToast("You are enter in location.")
-            workBtn.isUserInteractionEnabled = true
+//            workBtn.isUserInteractionEnabled = true
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         if region is CLCircularRegion {
             self.showToast("You are exit from location.")
-            workBtn.isUserInteractionEnabled = false
+//            workBtn.isUserInteractionEnabled = false
         }
     }
 }
@@ -670,7 +679,7 @@ extension HomeViewController : CLLocationManagerDelegate {
 extension HomeViewController {
 
     func updateUserProfile() {
-        homeViewModel.setValues(gpsSwitch.isOn)
+//        homeViewModel.setValues(gpsSwitch.isOn)
         homeViewModel.updateProfileAPI()
     }
     

@@ -19,10 +19,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Attendance View Controller-->
         <scene sceneID="IRL-Ss-lLz">
             <objects>
-                <viewController id="Wwd-hw-wv6" sceneMemberID="viewController">
+                <viewController id="Wwd-hw-wv6" customClass="AttendanceViewController" customModule="_See" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Pah-CF-13e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
