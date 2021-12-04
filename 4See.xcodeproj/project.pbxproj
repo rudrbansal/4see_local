@@ -67,6 +67,9 @@
 		175552E026149931009D879A /* RPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175552DF26149931009D879A /* RPicker.swift */; };
 		1757920B25F215AC0025252D /* remindersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757920925F215AC0025252D /* remindersVC.swift */; };
 		1757920C25F215AC0025252D /* remindersVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1757920A25F215AC0025252D /* remindersVC.xib */; };
+		1764DC4F275B455E00076F66 /* SocialSpace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1764DC4E275B455E00076F66 /* SocialSpace.storyboard */; };
+		1764DC51275B489C00076F66 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764DC50275B489B00076F66 /* NotificationsViewController.swift */; };
+		1764DC53275B51AB00076F66 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764DC52275B51AB00076F66 /* EventDetailViewController.swift */; };
 		1766DD79261ECAA1003291AC /* newaRegisterVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766DD77261ECAA1003291AC /* newaRegisterVCViewController.swift */; };
 		1766DD7A261ECAA1003291AC /* newaRegisterVCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1766DD78261ECAA1003291AC /* newaRegisterVCViewController.xib */; };
 		1766DD7F261ECB42003291AC /* attendTimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766DD7D261ECB42003291AC /* attendTimerCell.swift */; };
@@ -248,6 +251,9 @@
 		175552DF26149931009D879A /* RPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPicker.swift; sourceTree = "<group>"; };
 		1757920925F215AC0025252D /* remindersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remindersVC.swift; sourceTree = "<group>"; };
 		1757920A25F215AC0025252D /* remindersVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = remindersVC.xib; sourceTree = "<group>"; };
+		1764DC4E275B455E00076F66 /* SocialSpace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SocialSpace.storyboard; sourceTree = "<group>"; };
+		1764DC50275B489B00076F66 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		1764DC52275B51AB00076F66 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		1766DD77261ECAA1003291AC /* newaRegisterVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newaRegisterVCViewController.swift; sourceTree = "<group>"; };
 		1766DD78261ECAA1003291AC /* newaRegisterVCViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = newaRegisterVCViewController.xib; sourceTree = "<group>"; };
 		1766DD7D261ECB42003291AC /* attendTimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attendTimerCell.swift; sourceTree = "<group>"; };
@@ -666,6 +672,16 @@
 			path = Reminders;
 			sourceTree = "<group>";
 		};
+		1764DC4D275B454700076F66 /* SocialSpace */ = {
+			isa = PBXGroup;
+			children = (
+				1764DC4E275B455E00076F66 /* SocialSpace.storyboard */,
+				1764DC50275B489B00076F66 /* NotificationsViewController.swift */,
+				1764DC52275B51AB00076F66 /* EventDetailViewController.swift */,
+			);
+			path = SocialSpace;
+			sourceTree = "<group>";
+		};
 		1766DD76261ECA79003291AC /* New Attendance */ = {
 			isa = PBXGroup;
 			children = (
@@ -901,6 +917,7 @@
 		17A67F5425EF820500FE67E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1764DC4D275B454700076F66 /* SocialSpace */,
 				17E0A30826429BB000DE10AE /* Privacy Policy */,
 				1766DD89261ED016003291AC /* ViewAttendance */,
 				1766DD76261ECA79003291AC /* New Attendance */,
@@ -1240,6 +1257,7 @@
 				17115CFB260868E100AC76BA /* forgetPasswordVC.xib in Resources */,
 				172863DD25F22AE80070153A /* remindVC.xib in Resources */,
 				38953587264694AB005D6222 /* lorem-ipsum.pdf in Resources */,
+				1764DC4F275B455E00076F66 /* SocialSpace.storyboard in Resources */,
 				176701C925F0AE97002FB87A /* editProfileViewController.xib in Resources */,
 				17A67FA625EF896500FE67E3 /* Roboto-Bold.ttf in Resources */,
 				172863E525F2445B0070153A /* sickViewController.xib in Resources */,
@@ -1388,6 +1406,7 @@
 				17178F7B25F1EE4C00D99DA4 /* inboxCell.swift in Sources */,
 				176F232A2615C681000F678A /* SickHandler.swift in Sources */,
 				176701C825F0AE97002FB87A /* editProfileViewController.swift in Sources */,
+				1764DC53275B51AB00076F66 /* EventDetailViewController.swift in Sources */,
 				176B96E325F110BC00ACE830 /* attendanceVC.swift in Sources */,
 				3823E8262650360A00A99A5C /* ReminderViewModel.swift in Sources */,
 				17A67F0925EF819400FE67E3 /* AppDelegate.swift in Sources */,
@@ -1443,6 +1462,7 @@
 				172863DC25F22AE80070153A /* remindVC.swift in Sources */,
 				176F23362615D162000F678A /* docCell.swift in Sources */,
 				1799D80D2612F99700AC42FE /* AttendanceRequest.swift in Sources */,
+				1764DC51275B489C00076F66 /* NotificationsViewController.swift in Sources */,
 				17070AD926047CCF0079E079 /* UserModel.swift in Sources */,
 				172863E425F2445B0070153A /* sickViewController.swift in Sources */,
 				178499BD260AF98B00A1776A /* AnnouncementRequest.swift in Sources */,
