@@ -70,6 +70,7 @@
 		1764DC4F275B455E00076F66 /* SocialSpace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1764DC4E275B455E00076F66 /* SocialSpace.storyboard */; };
 		1764DC51275B489C00076F66 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764DC50275B489B00076F66 /* NotificationsViewController.swift */; };
 		1764DC53275B51AB00076F66 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1764DC52275B51AB00076F66 /* EventDetailViewController.swift */; };
+		1764DC56275B57E300076F66 /* Surveys.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1764DC55275B57E300076F66 /* Surveys.storyboard */; };
 		1766DD79261ECAA1003291AC /* newaRegisterVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766DD77261ECAA1003291AC /* newaRegisterVCViewController.swift */; };
 		1766DD7A261ECAA1003291AC /* newaRegisterVCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1766DD78261ECAA1003291AC /* newaRegisterVCViewController.xib */; };
 		1766DD7F261ECB42003291AC /* attendTimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766DD7D261ECB42003291AC /* attendTimerCell.swift */; };
@@ -155,6 +156,7 @@
 		17A70403261D82B100AF43CF /* noteDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A70401261D82B100AF43CF /* noteDetailsVC.xib */; };
 		17A704BB261DD55A00AF43CF /* dataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A704BA261DD55A00AF43CF /* dataCell.xib */; };
 		17A704BE261DD56B00AF43CF /* dataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A704BD261DD56B00AF43CF /* dataCell.swift */; };
+		17C0292A275BB10D00754EBB /* SurveyDetailsDualOptionsTableViewCell in Sources */ = {isa = PBXBuildFile; fileRef = 17C02929275BB10D00754EBB /* SurveyDetailsDualOptionsTableViewCell */; };
 		17C736232625C5B70085C2DE /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C736222625C5B70085C2DE /* NotesModel.swift */; };
 		17C736262625C5CA0085C2DE /* NotesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C736252625C5CA0085C2DE /* NotesRequest.swift */; };
 		17C7362A2625C5E50085C2DE /* NotesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C736292625C5E50085C2DE /* NotesResponse.swift */; };
@@ -254,6 +256,7 @@
 		1764DC4E275B455E00076F66 /* SocialSpace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SocialSpace.storyboard; sourceTree = "<group>"; };
 		1764DC50275B489B00076F66 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		1764DC52275B51AB00076F66 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		1764DC55275B57E300076F66 /* Surveys.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Surveys.storyboard; sourceTree = "<group>"; };
 		1766DD77261ECAA1003291AC /* newaRegisterVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newaRegisterVCViewController.swift; sourceTree = "<group>"; };
 		1766DD78261ECAA1003291AC /* newaRegisterVCViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = newaRegisterVCViewController.xib; sourceTree = "<group>"; };
 		1766DD7D261ECB42003291AC /* attendTimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attendTimerCell.swift; sourceTree = "<group>"; };
@@ -341,6 +344,7 @@
 		17A70401261D82B100AF43CF /* noteDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = noteDetailsVC.xib; sourceTree = "<group>"; };
 		17A704BA261DD55A00AF43CF /* dataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dataCell.xib; sourceTree = "<group>"; };
 		17A704BD261DD56B00AF43CF /* dataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dataCell.swift; sourceTree = "<group>"; };
+		17C02929275BB10D00754EBB /* SurveyDetailsDualOptionsTableViewCell */ = {isa = PBXFileReference; lastKnownFileType = text; path = SurveyDetailsDualOptionsTableViewCell; sourceTree = "<group>"; };
 		17C736222625C5B70085C2DE /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
 		17C736252625C5CA0085C2DE /* NotesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRequest.swift; sourceTree = "<group>"; };
 		17C736292625C5E50085C2DE /* NotesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesResponse.swift; sourceTree = "<group>"; };
@@ -682,6 +686,15 @@
 			path = SocialSpace;
 			sourceTree = "<group>";
 		};
+		1764DC54275B57BF00076F66 /* Surveys */ = {
+			isa = PBXGroup;
+			children = (
+				1764DC55275B57E300076F66 /* Surveys.storyboard */,
+				17C02929275BB10D00754EBB /* SurveyDetailsDualOptionsTableViewCell */,
+			);
+			path = Surveys;
+			sourceTree = "<group>";
+		};
 		1766DD76261ECA79003291AC /* New Attendance */ = {
 			isa = PBXGroup;
 			children = (
@@ -917,6 +930,7 @@
 		17A67F5425EF820500FE67E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1764DC54275B57BF00076F66 /* Surveys */,
 				1764DC4D275B454700076F66 /* SocialSpace */,
 				17E0A30826429BB000DE10AE /* Privacy Policy */,
 				1766DD89261ED016003291AC /* ViewAttendance */,
@@ -1274,6 +1288,7 @@
 				1775670E261C8CC70070FC40 /* LaunchScreen.storyboard in Resources */,
 				172FD2E8263957110059FDFA /* GoogleService-Info.plist in Resources */,
 				174EBAC9261C5FD700A39D39 /* notesVC.xib in Resources */,
+				1764DC56275B57E300076F66 /* Surveys.storyboard in Resources */,
 				176F23372615D162000F678A /* docCell.xib in Resources */,
 				17A703F8261D7CEB00AF43CF /* addNoteCell.xib in Resources */,
 				17A67F9C25EF896500FE67E3 /* Roboto-Medium.ttf in Resources */,
@@ -1389,6 +1404,7 @@
 				17A703AB261D6EE900AF43CF /* PolicyModel.swift in Sources */,
 				17CAAD86263C43EC0014DF9A /* WKWebViewDownloadHelper.swift in Sources */,
 				17A67FB325EF982900FE67E3 /* loginViewController.swift in Sources */,
+				17C0292A275BB10D00754EBB /* SurveyDetailsDualOptionsTableViewCell in Sources */,
 				17070B242604C21A0079E079 /* editProfileViewModel.swift in Sources */,
 				17070AF5260480BC0079E079 /* LoginViewModel.swift in Sources */,
 				178499CF260AFFFC00A1776A /* SystemResponse.swift in Sources */,
