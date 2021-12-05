@@ -1,0 +1,85 @@
+//
+//  SurveyDetailsViewController.swift
+//  4See
+//
+//  Created by Rudr Bansal on 04/12/21.
+//
+
+import UIKit
+
+class SurveyDetailsViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+    }
+}
+
+extension SurveyDetailsViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+}
+
+class SurveyDetailsMultipleOptionsTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var lblQuestionNumber: UILabel!
+    @IBOutlet weak var lblQuestion: UILabel!
+
+    @IBOutlet weak var btnStronglyDisagree: UIButton!
+    @IBOutlet weak var btnDisagree: UIButton!
+    @IBOutlet weak var btnNeutral: UIButton!
+    @IBOutlet weak var btnAgree: UIButton!
+    @IBOutlet weak var btnStronglyAgree: UIButton!
+    
+    @IBOutlet weak var stronglyDisagreeSelectionLabel: UILabel!
+    @IBOutlet weak var disagreeSelectionLabel: UILabel!
+    @IBOutlet weak var neutralSelectionLabel: UILabel!
+    @IBOutlet weak var agreeSelectionLabel: UILabel!
+    @IBOutlet weak var stronglyAgreeSelectionLabel:UILabel!
+    
+    @IBAction func btnActionStronglyDisagree(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func btnActionDisagree(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func btnActionNeutral(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func btnActionAgree(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func btnActionStronglyAgree(_ sender: UIButton) {
+        
+    }
+}
+
+class SurveyDetailsDualOptionsTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var btnYes: UIButton!
+    @IBOutlet weak var btnNo: UIButton!
+    
+    @IBOutlet weak var questionNumberLabel: UILabel!
+    @IBOutlet weak var questionLabel: UILabel!
+    
+    @IBOutlet weak var stronglyDisagreeSelectionLabel: UILabel!
+    @IBOutlet weak var disagreeSelectionLabel: UILabel!
+
+    @IBAction func btnActionYes(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func btnActionNo(_ sender: UIButton) {
+        
+    }
+}
